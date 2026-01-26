@@ -2,13 +2,17 @@
   "name": "simple-feature-flags",
   "version": "1.0.0",
   "description": "A simple feature flags library",
-  "main": "index.js",
+  "main": "./packages/core/dist/index.js",
+  "types": "./packages/core/dist/index.d.ts",
   "exports": {
-    ".": "./index.js",
-    "./core": "./packages/core/index.js",
-    "./react": "./packages/react/index.js"
+    "./core": "./packages/core/dist/index.js",
+    "./react": "./packages/react/dist/index.js"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
+    "build": "tsc -b packages/core packages/react",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,6 +30,9 @@
     }
   },
   "devDependencies": {
-    "react": "^19.2.3"
+    "@types/node": "^25.0.10",
+    "@types/react": "^19.2.9",
+    "react": "^19.2.3",
+    "typescript": "^5.9.3"
   }
 }

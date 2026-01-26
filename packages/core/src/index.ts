@@ -1,9 +1,15 @@
-class FeatureFlags {
+export interface Flags {
+  [key: string]: boolean | any;
+}
+
+export class FeatureFlags {
+  private flags: Flags;
+
   constructor() {
     this.flags = {};
   }
 
-  init(flags) {
+  init(flags: Flags): void {
     if (typeof flags !== "object" || flags === null) {
       console.warn("FeatureFlags.init: flags must be an object");
       return;
@@ -11,18 +17,13 @@ class FeatureFlags {
     this.flags = { ...flags };
   }
 
-  isEnabled(key) {
+  isEnabled(key: string): boolean {
     return !!this.flags[key];
   }
 
-  getFlags() {
+  getFlags(): Flags {
     return this.flags;
   }
 }
 
-const featureFlags = new FeatureFlags();
-
-module.exports = {
-  featureFlags,
-  FeatureFlags,
-};
+export const featureFlags = new FeatureFlags();
