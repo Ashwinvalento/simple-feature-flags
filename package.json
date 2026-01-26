@@ -1,7 +1,7 @@
 {
   "name": "simple-feature-flags",
   "version": "1.0.0",
-  "description": "A simple feature flags library",
+  "description": "A simple, lightweight, and type-safe feature flags library for JavaScript and React applications.",
   "main": "./packages/core/dist/index.js",
   "types": "./packages/core/dist/index.d.ts",
   "exports": {
