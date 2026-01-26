@@ -46,12 +46,9 @@ if (featureFlags.isEnabled("newFeature")) {
 
 ```tsx
 // If using main package
-import {
-  FeatureFlagProvider,
-  useFeatureFlag,
-} from "simple-feature-flags/react";
+import { FeatureFlagProvider, useFeatures } from "simple-feature-flags/react";
 // If using independent package
-// import { FeatureFlagProvider, useFeatureFlag } from '@simple-feature-flags/react';
+// import { FeatureFlagProvider, useFeatures } from '@simple-feature-flags/react';
 
 // In your root component
 function App() {
@@ -66,9 +63,9 @@ function App() {
 
 // In a child component
 function MyComponent() {
-  const isNewFeatureEnabled = useFeatureFlag("newFeature");
+  const { isEnabled, isDisabled } = useFeatures();
 
-  if (isNewFeatureEnabled) {
+  if (isEnabled("newFeature")) {
     return <div>New Feature!</div>;
   }
   return <div>Old Feature</div>;
