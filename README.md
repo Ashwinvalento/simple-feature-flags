@@ -103,3 +103,18 @@ Unlike complex SaaS SDKs that manage remote configurations and user targeting, `
    ```bash
    npm run build
    ```
+
+## Publishing
+
+To publish the packages to npm:
+
+1. Login to npm:
+
+   ```bash
+   npm login
+   ```
+
+2. Run the publish script:
+   ```bash
+   npm run publish:packages
+   ```
