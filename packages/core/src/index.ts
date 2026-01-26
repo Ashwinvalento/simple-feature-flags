@@ -17,8 +17,15 @@ export class FeatureFlags {
     this.flags = { ...flags };
   }
 
-  isEnabled(key: string): boolean {
+  isEnabled(key: string | string[]): boolean {
+    if (Array.isArray(key)) {
+      return key.every((k) => !!this.flags[k]);
+    }
     return !!this.flags[key];
+  }
+
+  isDisabled(key: string | string[]): boolean {
+    return !this.isEnabled(key);
   }
 
   getFlags(): Flags {
