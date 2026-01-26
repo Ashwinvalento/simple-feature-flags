@@ -12,7 +12,7 @@ module.exports = {
       testEnvironment: "jsdom",
       testMatch: ["<rootDir>/packages/react/src/**/__tests__/**/*.test.tsx"],
       moduleNameMapper: {
-        "^@simple-feature-flags/core$": "<rootDir>/packages/core/src/index.ts",
+        "^simple-feature-flags-core$": "<rootDir>/packages/core/src/index.ts",
       },
       transform: {
         "^.+\\.tsx?$": [

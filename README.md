@@ -6,8 +6,8 @@ A simple feature flags library for JavaScript and React applications, written in
 
 This is a monorepo containing:
 
-- `@simple-feature-flags/core`: Core logic.
-- `@simple-feature-flags/react`: React bindings.
+- `simple-feature-flags-core`: Core logic.
+- `simple-feature-flags-react`: React bindings.
 
 ## Installation
 
@@ -20,8 +20,8 @@ npm install simple-feature-flags
 Or install packages independently:
 
 ```bash
-npm install @simple-feature-flags/core
-npm install @simple-feature-flags/react
+npm install simple-feature-flags-core
+npm install simple-feature-flags-react
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ npm install @simple-feature-flags/react
 // If using main package
 import { featureFlags } from "simple-feature-flags/core";
 // If using independent package
-// import { featureFlags } from '@simple-feature-flags/core';
+// import { featureFlags } from 'simple-feature-flags-core';
 
 featureFlags.init({
   newFeature: true,
@@ -50,7 +50,7 @@ if (featureFlags.isEnabled("newFeature")) {
 // If using main package
 import { FeatureFlagProvider, useFeatures } from "simple-feature-flags/react";
 // If using independent package
-// import { FeatureFlagProvider, useFeatures } from '@simple-feature-flags/react';
+// import { FeatureFlagProvider, useFeatures } from 'simple-feature-flags-react';
 
 // In your root component
 function App() {
