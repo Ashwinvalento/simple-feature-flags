@@ -1,5 +1,7 @@
 # Simple Feature Flags
 
+> **Note:** This is a completely Vibe coded repository.
+
 A simple feature flags library for JavaScript and React applications, written in TypeScript.
 
 This is a monorepo containing:
@@ -71,6 +73,25 @@ function MyComponent() {
   return <div>Old Feature</div>;
 }
 ```
+
+## Advantages
+
+- **Zero Dependencies (Core):** The core logic is extremely lightweight with no external dependencies.
+- **Type-Safe:** Built with TypeScript from the ground up, providing excellent DX with autocompletion.
+- **Framework Agnostic Core:** Use the core logic in Node.js, Vue, Angular, or vanilla JS.
+- **React Hooks:** First-class React support with intuitive hooks.
+- **Flexible:** Supports checking single flags or arrays of flags.
+
+## Comparison with Other Libraries
+
+| Feature         | Simple Feature Flags         | LaunchDarkly / SaaS SDKs    | Custom Context         |
+| :-------------- | :--------------------------- | :-------------------------- | :--------------------- |
+| **Setup**       | Instant (Zero config)        | Complex (Requires API keys) | Moderate (Boilerplate) |
+| **Data Source** | Local / Custom (You init it) | Remote / Streaming          | Local                  |
+| **Size**        | Tiny                         | Large (Network logic)       | Tiny                   |
+| **Focus**       | Feature Flagging logic       | Full Management Platform    | Generic State          |
+
+Unlike complex SaaS SDKs that manage remote configurations and user targeting, `simple-feature-flags` focuses on the _consumption_ and _checking_ of flags within your application code. It pairs perfectly with any backend or configuration provider you choose.
 
 ## Development
 
