@@ -8,6 +8,12 @@
     "./core": "./packages/core/dist/index.js",
     "./react": "./packages/react/dist/index.js"
   },
+  "files": [
+    "packages/core/dist",
+    "packages/react/dist",
+    "packages/core/package.json",
+    "packages/react/package.json"
+  ],
   "workspaces": [
     "packages/*"
   ],

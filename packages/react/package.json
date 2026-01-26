@@ -13,6 +13,9 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   }
