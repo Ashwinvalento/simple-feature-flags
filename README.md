@@ -1,6 +1,7 @@
-# 🚩 Simple Feature Flags
-
-> **Note:** This is a completely Vibe coded project.
+<div align="center">
+  <img src="assets/logo.svg" width="120" alt="Simple Feature Flags Logo" />
+  <h1>Simple Feature Flags</h1>
+</div>
 
 A **lightweight**, **type-safe**, and **zero-dependency** feature flags library for JavaScript and React applications. Manage your feature toggles with ease using a simple API and full TypeScript support. 🚀
 
@@ -127,3 +128,5 @@ To publish the packages to npm:
    ```bash
    npm run publish:packages
    ```
+
+> **Note:** This project is completely Vibe coded and human reviewed.
