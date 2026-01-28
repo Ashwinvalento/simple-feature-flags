@@ -1,5 +1,13 @@
 # @simple-feature-flags/react
 
+## 1.1.1
+
+### Patch Changes
+
+- 726567a: fix release script
+- Updated dependencies [726567a]
+  - @simple-feature-flags/core@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes
