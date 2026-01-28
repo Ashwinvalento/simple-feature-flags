@@ -2,6 +2,10 @@
   "name": "simple-feature-flags",
   "version": "1.0.0",
   "description": "A simple, lightweight, and type-safe feature flags library for JavaScript and React applications.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashwinvalento/simple-feature-flags.git"
+  },
   "main": "./packages/core/dist/index.js",
   "types": "./packages/core/dist/index.d.ts",
   "exports": {
@@ -20,7 +24,7 @@
   "scripts": {
     "build": "tsc -b packages/core packages/react",
     "test": "jest",
-    "publish:packages": "npm run build && npm publish --workspace packages/core --workspace packages/react --access public",
+    "publish:packages": "npm run build && npm publish --workspace packages/core --workspace packages/react --provenance --access public",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "npm run build && changeset publish"
