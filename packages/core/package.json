@@ -1,6 +1,11 @@
 {
   "name": "@simple-feature-flags/core",
   "version": "1.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashwinvalento/simple-feature-flags.git",
+    "directory": "packages/core"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -11,6 +16,7 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

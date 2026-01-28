@@ -2,6 +2,10 @@
   "name": "simple-feature-flags",
   "version": "1.0.0",
   "description": "A simple, lightweight, and type-safe feature flags library for JavaScript and React applications.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashwinvalento/simple-feature-flags.git"
+  },
   "main": "./packages/core/dist/index.js",
   "types": "./packages/core/dist/index.d.ts",
   "exports": {
