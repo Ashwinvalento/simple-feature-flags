@@ -26,8 +26,10 @@ export function FeatureFlagProvider({
 export function useFeatures() {
   const instance = React.useContext(FeatureFlagsContext);
   return {
-    isEnabled: (key: string | string[]) => instance.isEnabled(key),
-    isDisabled: (key: string | string[]) => instance.isDisabled(key),
+    isEnabled: (key: string | string[], defaultValue?: boolean) =>
+      instance.isEnabled(key, defaultValue),
+    isDisabled: (key: string | string[], defaultValue?: boolean) =>
+      instance.isDisabled(key, defaultValue),
     getFlags: () => instance.getFlags(),
   };
 }

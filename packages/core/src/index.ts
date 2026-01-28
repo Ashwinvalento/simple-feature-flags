@@ -17,15 +17,19 @@ export class FeatureFlags {
     this.flags = { ...flags };
   }
 
-  isEnabled(key: string | string[]): boolean {
+  isEnabled(key: string | string[], defaultValue: boolean = false): boolean {
     if (Array.isArray(key)) {
-      return key.every((k) => !!this.flags[k]);
+      return key.every((k) => {
+        const val = this.flags[k];
+        return val === undefined ? defaultValue : !!val;
+      });
     }
-    return !!this.flags[key];
+    const val = this.flags[key];
+    return val === undefined ? defaultValue : !!val;
   }
 
-  isDisabled(key: string | string[]): boolean {
-    return !this.isEnabled(key);
+  isDisabled(key: string | string[], defaultValue: boolean = false): boolean {
+    return !this.isEnabled(key, !defaultValue);
   }
 
   getFlags(): Flags {
