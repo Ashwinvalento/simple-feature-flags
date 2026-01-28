@@ -1,11 +1,11 @@
-name: Check Changelog
+name: Check Changeset
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  check-changelog:
+  check-changeset:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check for Changelog modification
+      - name: Check for Changeset
         run: |
           # Get the list of changed files
           CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} ${{ github.sha }})
@@ -21,10 +21,11 @@ jobs:
           echo "Changed files:"
           echo "$CHANGED_FILES"
 
-          if [[ $CHANGED_FILES == *"CHANGELOG.md"* ]]; then
-            echo "SUCCESS: CHANGELOG.md has been modified."
+          # Check if any .md file in .changeset/ (excluding README.md) has been modified/added
+          if echo "$CHANGED_FILES" | grep ".changeset/.*.md" | grep -v "README.md"; then
+            echo "SUCCESS: A changeset file was found."
           else
-            echo "ERROR: CHANGELOG.md was not modified in this Pull Request."
-            echo "Please add an entry to CHANGELOG.md describing your changes."
+            echo "ERROR: No changeset file found in .changeset/ directory."
+            echo "Please run 'npm run changeset' to create one."
             exit 1
           fi

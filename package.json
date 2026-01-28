@@ -20,7 +20,10 @@
   "scripts": {
     "build": "tsc -b packages/core packages/react",
     "test": "jest",
-    "publish:packages": "npm run build && npm publish --workspace packages/core --workspace packages/react --access public"
+    "publish:packages": "npm run build && npm publish --workspace packages/core --workspace packages/react --access public",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish"
   },
   "keywords": [
     "feature-flags",
@@ -37,6 +40,7 @@
     }
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/jest": "^30.0.0",
