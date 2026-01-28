@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: 18
 
+      - name: Create .npmrc
+        run: echo "registry=https://registry.npmjs.org/" > .npmrc
+
       - name: Install Dependencies
         run: npm ci
 
