@@ -1,0 +1,30 @@
+name: Check Changelog
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check for Changelog modification
+        run: |
+          # Get the list of changed files
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }} ${{ github.sha }})
+
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+
+          if [[ $CHANGED_FILES == *"CHANGELOG.md"* ]]; then
+            echo "SUCCESS: CHANGELOG.md has been modified."
+          else
+            echo "ERROR: CHANGELOG.md was not modified in this Pull Request."
+            echo "Please add an entry to CHANGELOG.md describing your changes."
+            exit 1
+          fi
