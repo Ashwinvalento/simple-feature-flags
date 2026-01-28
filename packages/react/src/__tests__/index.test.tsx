@@ -117,4 +117,35 @@ describe("FeatureFlags React", () => {
     expect(screen.getByTestId("disabledTrue")).toHaveTextContent("True");
     expect(screen.getByTestId("disabledFalse")).toHaveTextContent("False");
   });
+
+  test("should get flag value", () => {
+    const TestGetFlag = () => {
+      const { getFlag } = useFeatures();
+
+      const valA = getFlag("a");
+      const valB = getFlag("b", "default");
+      const valC = getFlag("c", "defaultC");
+      const valD = getFlag("d"); // undefined
+
+      return (
+        <div>
+          <div data-testid="valA">{String(valA)}</div>
+          <div data-testid="valB">{String(valB)}</div>
+          <div data-testid="valC">{String(valC)}</div>
+          <div data-testid="valD">{String(valD)}</div>
+        </div>
+      );
+    };
+
+    render(
+      <FeatureFlagProvider flags={{ a: true, c: 123 }}>
+        <TestGetFlag />
+      </FeatureFlagProvider>,
+    );
+
+    expect(screen.getByTestId("valA")).toHaveTextContent("true");
+    expect(screen.getByTestId("valB")).toHaveTextContent("default");
+    expect(screen.getByTestId("valC")).toHaveTextContent("123");
+    expect(screen.getByTestId("valD")).toHaveTextContent("undefined");
+  });
 });

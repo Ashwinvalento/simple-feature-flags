@@ -30,6 +30,8 @@ export function useFeatures() {
       instance.isEnabled(key, defaultValue),
     isDisabled: (key: string | string[], defaultValue?: boolean) =>
       instance.isDisabled(key, defaultValue),
+    getFlag: (key: string, defaultValue?: any) =>
+      instance.getFlag(key, defaultValue),
     getFlags: () => instance.getFlags(),
   };
 }

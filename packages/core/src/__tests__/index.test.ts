@@ -82,4 +82,21 @@ describe("FeatureFlags Core", () => {
     );
     expect(featureFlags.isDisabled(["a", "missing"], true)).toBe(true);
   });
+
+  test("should get flag value", () => {
+    featureFlags.init({ a: true, b: "someValue", c: 123 });
+
+    expect(featureFlags.getFlag("a")).toBe(true);
+    expect(featureFlags.getFlag("b")).toBe("someValue");
+    expect(featureFlags.getFlag("c")).toBe(123);
+
+    // Missing key -> undefined
+    expect(featureFlags.getFlag("d")).toBeUndefined();
+
+    // Missing key with default
+    expect(featureFlags.getFlag("d", "default")).toBe("default");
+
+    // Existing key should ignore default
+    expect(featureFlags.getFlag("b", "default")).toBe("someValue");
+  });
 });

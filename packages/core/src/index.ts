@@ -32,6 +32,10 @@ export class FeatureFlags {
     return !this.isEnabled(key, !defaultValue);
   }
 
+  getFlag(key: string, defaultValue?: any): any {
+    return this.flags[key] || defaultValue;
+  }
+
   getFlags(): Flags {
     return this.flags;
   }
