@@ -16,7 +16,9 @@
     "packages/core/dist",
     "packages/react/dist",
     "packages/core/package.json",
-    "packages/react/package.json"
+    "packages/react/package.json",
+    "packages/core/README.md",
+    "packages/react/README.md"
   ],
   "workspaces": [
     "packages/*"

@@ -36,3 +36,12 @@ Once changes are merged into `main`, the CI/CD pipeline handles the rest:
 - **Secrets**: Ensure `NPM_TOKEN` is added to the GitHub Repository Secrets.
 - **Tests**: `npm test` should pass.
 - **Build**: `npm run build` should succeed.
+
+## 4. Skipping Release
+
+If you need to merge changes to `main` without triggering the release workflow (e.g., CI-only changes, documentation updates, or internal refactors that shouldn't trigger a publish or PR creation), you can skip the release job.
+
+1.  **Add Skip Flag**: Include `[skip release]` in your merge commit message.
+2.  **Effect**: The "Release" GitHub Action will be skipped.
+
+To manually trigger a release later (e.g., if you skipped it), go to the "Actions" tab in GitHub, select the "Release" workflow, and click "Run workflow".
