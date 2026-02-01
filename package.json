@@ -26,7 +26,7 @@
   "scripts": {
     "build": "tsc -b packages/core packages/react",
     "test": "jest",
-    "publish:packages": "npm run build && npm publish --workspace packages/core --workspace packages/react --provenance --access public",
+    "publish:packages": "npm run build && npm publish --workspace packages/core --workspace packages/react --access public",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "npm run build && changeset publish"
