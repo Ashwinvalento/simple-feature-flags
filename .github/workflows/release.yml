@@ -42,5 +42,6 @@ jobs:
           # This expects you to have a script called release in your package.json
           publish: npm run release
         env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
