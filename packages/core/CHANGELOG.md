@@ -1,5 +1,11 @@
 # @simple-feature-flags/core
 
+## 1.1.3
+
+### Patch Changes
+
+- 1a6ff94: Add readme files and release fix
+
 ## 1.1.2
 
 ### Patch Changes
