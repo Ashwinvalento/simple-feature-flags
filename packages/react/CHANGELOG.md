@@ -1,5 +1,13 @@
 # @simple-feature-flags/react
 
+## 1.1.2
+
+### Patch Changes
+
+- b31b4dd: Add readme files and release fix
+- Updated dependencies [b31b4dd]
+  - @simple-feature-flags/core@1.1.2
+
 ## 1.1.1
 
 ### Patch Changes
